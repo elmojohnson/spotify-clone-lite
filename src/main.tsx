@@ -20,14 +20,17 @@ import Login from "./pages/account/Login.tsx";
 // Album
 import Albums from "./pages/album/Albums.tsx";
 import ViewAlbum from "./pages/album/ViewAlbum.tsx";
+import AlbumParentLayout from "./pages/album/AlbumParentLayout.tsx";
 
 // Artist
 import Artists from "./pages/artist/Artists.tsx";
 import ViewArtist from "./pages/artist/ViewArtist.tsx";
+import ArtistParentLayout from "./pages/artist/ArtistParentLayout.tsx";
 
 // Playlist
 import Playlists from "./pages/playlist/Playlists.tsx";
 import ViewPlaylist from "./pages/playlist/ViewPlaylist.tsx";
+import PlaylistParentLayout from "./pages/playlist/PlaylistParentLayout.tsx";
 
 const router = createBrowserRouter([
   {
@@ -63,6 +66,69 @@ const router = createBrowserRouter([
   {
     path: "/account/login",
     element: <Login />,
+  },
+
+  // Album
+  {
+    path: "/albums",
+    element: (
+      <ProtectedRoute>
+        <AlbumParentLayout />
+      </ProtectedRoute>
+    ),
+    errorElement: <PageNotFound />,
+    children: [
+      {
+        path: "",
+        element: <Albums />,
+      },
+      {
+        path: ":id",
+        element: <ViewAlbum />,
+      },
+    ],
+  },
+
+  // Artist
+  {
+    path: "/artists",
+    element: (
+      <ProtectedRoute>
+        <ArtistParentLayout />
+      </ProtectedRoute>
+    ),
+    errorElement: <PageNotFound />,
+    children: [
+      {
+        path: "",
+        element: <Artists />,
+      },
+      {
+        path: ":id",
+        element: <ViewArtist />,
+      },
+    ],
+  },
+
+  // Playlist
+  {
+    path: "/playlists",
+    element: (
+      <ProtectedRoute>
+        <PlaylistParentLayout />
+      </ProtectedRoute>
+    ),
+    errorElement: <PageNotFound />,
+    children: [
+      {
+        path: "",
+        element: <Playlists />,
+      },
+      {
+        path: ":id",
+        element: <ViewPlaylist />,
+      },
+    ],
   },
 ]);
 
