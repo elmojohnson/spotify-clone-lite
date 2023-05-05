@@ -1,16 +1,19 @@
-import React, { FC } from "react";
+import React, { FC, useContext } from "react";
 import Navbar from "./Navbar";
 import Drawer from "./Drawer";
+import NavbarContext from "../../contexts/NavbarContext";
 
 type LayoutType = {
   children: any;
 };
 
 const Layout: FC<LayoutType> = ({ children }) => {
+  const ctx = useContext(NavbarContext);
+
   return (
     <div>
       <Navbar />
-      <Drawer />
+      {ctx?.isOpen && <Drawer />}
       <main className="wrapper">{children}</main>
     </div>
   );
