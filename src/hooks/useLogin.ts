@@ -1,8 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import axios from "axios";
-import {Buffer} from 'buffer';
+import { Buffer } from "buffer";
+import { useNavigate } from "react-router-dom";
 
 const useLogin = () => {
+  const navigate = useNavigate();
+
   // Credentials
   const client_id = import.meta.env.VITE_SPOTIFY_CLIENT_ID;
   const client_secret = import.meta.env.VITE_SPOTIFY_CLIENT_SECRET;
@@ -40,17 +43,30 @@ const useLogin = () => {
         {
           headers: {
             "Content-Type": "application/x-www-form-urlencoded",
-            Authorization: "Basic " + new Buffer(client_id + ":" + client_secret).toString("base64"),
+            Authorization:
+              "Basic " +
+              new Buffer(client_id + ":" + client_secret).toString("base64"),
           },
         }
       );
-      console.log(result)
+
+      // Store to local storage
+      localStorage.setItem("access_token", result.data.access_token);
+      localStorage.setItem("refresh_token", result.data.refresh_token);
+
+      // Yay! Go to home page!
+      navigate("/");
     } catch (error) {
       console.error(error);
     }
   };
 
   useEffect(() => {
+    // Redirect to home page if user is already logged in
+    if(localStorage.getItem("access_token")) {
+        navigate("/")
+    }
+
     // Get code from query params
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
