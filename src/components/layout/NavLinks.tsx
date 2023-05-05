@@ -19,20 +19,22 @@ const NavLinks = () => {
       href: "/playlists",
       label: "Playlists",
     },
+    {
+      href: "/account/me",
+      label: "Account",
+    },
   ];
 
   return (
-    <div>
-      <nav>
-        {links.map((link, i) => {
-          return (
-            <Link key={i} to={link.href}>
-              {link.label}
-            </Link>
-          );
-        })}
-      </nav>
-    </div>
+    <nav className="flex items-center space-x-4 font-semibold text-sm">
+      {links.map((link, i) => {
+        return (
+          <Link key={i} to={link.href}>
+            {link.label}
+          </Link>
+        );
+      })}
+    </nav>
   );
 };
 
