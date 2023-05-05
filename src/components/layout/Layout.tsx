@@ -4,6 +4,8 @@ import NavbarContext from "../../contexts/NavbarContext";
 import Navbar from "./Navbar";
 import Drawer from "./Drawer";
 
+import { AnimatePresence } from "framer-motion";
+
 type LayoutType = {
   children: any;
 };
@@ -14,7 +16,7 @@ const Layout: FC<LayoutType> = ({ children }) => {
   return (
     <div>
       <Navbar />
-      {ctx?.isOpen && <Drawer />}
+      <AnimatePresence>{ctx?.isOpen && <Drawer />}</AnimatePresence>
       <main className="wrapper">{children}</main>
     </div>
   );
