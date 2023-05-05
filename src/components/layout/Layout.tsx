@@ -1,7 +1,8 @@
-import React, { FC, useContext } from "react";
+import { FC, useContext } from "react";
+import NavbarContext from "../../contexts/NavbarContext";
+
 import Navbar from "./Navbar";
 import Drawer from "./Drawer";
-import NavbarContext from "../../contexts/NavbarContext";
 
 type LayoutType = {
   children: any;

@@ -1,7 +1,8 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
+import NavbarContext from "../../contexts/NavbarContext";
+
 import NavLinks from "./NavLinks";
 import { MdMenu } from "react-icons/md";
-import NavbarContext from "../../contexts/NavbarContext";
 
 const Navbar = () => {
   const ctx = useContext(NavbarContext);
@@ -13,7 +14,10 @@ const Navbar = () => {
         <div className="md:block hidden">
           <NavLinks />
         </div>
-        <button className="text-2xl md:hidden block hover:brightness-90" onClick={ctx?.handleOpen}>
+        <button
+          className="text-2xl md:hidden block hover:brightness-90"
+          onClick={ctx?.handleOpen}
+        >
           <MdMenu />
         </button>
       </div>

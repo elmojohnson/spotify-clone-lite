@@ -1,7 +1,7 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
+import NavbarContext from "../../contexts/NavbarContext";
 import NavLinks from "./NavLinks";
 import { MdClose } from "react-icons/md";
-import NavbarContext from "../../contexts/NavbarContext";
 
 const Drawer = () => {
   const ctx = useContext(NavbarContext);
