@@ -4,7 +4,7 @@ import NavLinks from './NavLinks'
 const Navbar = () => {
     
   return (
-    <div>
+    <div className="py-2 bg-primary">
         <h1>App</h1>
         <NavLinks />
     </div>

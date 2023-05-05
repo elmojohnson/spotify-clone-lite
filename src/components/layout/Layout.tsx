@@ -9,7 +9,7 @@ const Layout: FC<LayoutType> = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <main>{children}</main>
+      <main className="wrapper">{children}</main>
     </div>
   );
 };
