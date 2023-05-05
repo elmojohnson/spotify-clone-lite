@@ -10,6 +10,10 @@ const NavLinks = () => {
       label: "Home",
     },
     {
+      href: "/search",
+      label: "Search",
+    },
+    {
       href: "/albums",
       label: "Albums",
     },
