@@ -1,7 +1,10 @@
 import ReactDOM from "react-dom/client";
 import App from "./App.tsx";
 import "./index.css";
+
+// Router
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import ProtectedRoute from "./components/layout/ProtectedRoute.tsx";
 
 // PAGES
 
@@ -26,21 +29,42 @@ import ViewArtist from "./pages/artist/ViewArtist.tsx";
 import Playlists from "./pages/playlist/Playlists.tsx";
 import ViewPlaylist from "./pages/playlist/ViewPlaylist.tsx";
 
-
 const router = createBrowserRouter([
   {
     path: "*",
-    element: <PageNotFound />
+    element: <PageNotFound />,
   },
   {
     path: "/",
-    element: <Home />
+    element: (
+      <ProtectedRoute>
+        <Home />
+      </ProtectedRoute>
+    ),
   },
   {
     path: "/search",
-    element: <Search />
-  }
-])
+    element: (
+      <ProtectedRoute>
+        <Search />
+      </ProtectedRoute>
+    ),
+  },
+
+  // Account
+  {
+    path: "/account/me",
+    element: (
+      <ProtectedRoute>
+        <Account />
+      </ProtectedRoute>
+    ),
+  },
+  {
+    path: "/account/login",
+    element: <Login />,
+  },
+]);
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
   <RouterProvider router={router} />
