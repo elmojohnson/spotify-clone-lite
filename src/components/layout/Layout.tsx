@@ -1,16 +1,17 @@
-import React, {FC} from 'react'
+import React, { FC } from "react";
+import Navbar from "./Navbar";
 
 type LayoutType = {
-    children: any
-}
+  children: any;
+};
 
-const Layout:FC<LayoutType> = ({children}) => {
+const Layout: FC<LayoutType> = ({ children }) => {
   return (
     <div>
-        <h1>App</h1>
-        <main>{children}</main>
+      <Navbar />
+      <main>{children}</main>
     </div>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

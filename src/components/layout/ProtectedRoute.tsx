@@ -8,7 +8,7 @@ type PR = {
 
 const ProtectedRoute: FC<PR> = ({ children }) => {
   const user = "";
-  return user ? <Layout>{children}</Layout> : <Navigate to="/account/login" />;
+  return !user ? <Layout>{children}</Layout> : <Navigate to="/account/login" />;
 };
 
 export default ProtectedRoute;
