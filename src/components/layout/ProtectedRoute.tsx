@@ -11,9 +11,9 @@ const ProtectedRoute: FC<PR> = ({ children }) => {
   const [isOpen, setOpen] = useState<boolean>(false);
   const handleOpen = () => setOpen(!isOpen);
 
-  const user = "";
+  const token = localStorage.getItem("access_token");
 
-  return !user ? (
+  return token ? (
     <NavbarContext.Provider value={{ isOpen, handleOpen }}>
       <Layout>{children}</Layout>
     </NavbarContext.Provider>
