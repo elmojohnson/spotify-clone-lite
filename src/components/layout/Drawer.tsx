@@ -9,9 +9,9 @@ const Drawer = () => {
   return (
     <div className="bg-white shadow md:hidden block fixed top-0 right-0 h-screen w-screen">
       <div className="wrapper">
-        <div className="flex items-start justify-between py-3">
-          <h1 className="text-primary font-bold text-2xl mb-2">Spotify</h1>
-          <button className="text-lg" onClick={ctx?.handleOpen}>
+        <div className="flex items-center justify-between py-3">
+          <h1 className="text-primary font-bold text-2xl">Spotify</h1>
+          <button className="text-xl" onClick={ctx?.handleOpen}>
             <MdClose />
           </button>
         </div>
