@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 
 const NavLinks = () => {
@@ -26,7 +25,7 @@ const NavLinks = () => {
   ];
 
   return (
-    <nav className="flex items-center space-x-4 font-semibold text-sm">
+    <nav className="flex md:flex-row flex-col md:items-center items-start md:space-x-4 space-x-0 md:space-y-0 space-y-2 font-semibold md:text-sm text-md">
       {links.map((link, i) => {
         return (
           <Link key={i} to={link.href}>

@@ -1,8 +1,12 @@
-import React from "react";
+import { useContext } from "react";
+import NavbarContext from "../../contexts/NavbarContext";
+
 import NavLinks from "./NavLinks";
 import { MdMenu } from "react-icons/md";
 
 const Navbar = () => {
+  const ctx = useContext(NavbarContext);
+
   return (
     <div className="py-3 bg-primary text-white shadow">
       <div className="flex items-center justify-between wrapper">
@@ -10,7 +14,10 @@ const Navbar = () => {
         <div className="md:block hidden">
           <NavLinks />
         </div>
-        <button className="text-2xl md:hidden block hover:brightness-90">
+        <button
+          className="text-2xl md:hidden block hover:brightness-90"
+          onClick={ctx?.handleOpen}
+        >
           <MdMenu />
         </button>
       </div>
