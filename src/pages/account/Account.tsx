@@ -19,12 +19,12 @@ const Account = () => {
             <p className="md:text-xs text-md">{user?.email}</p>
           </div>
         </div>
-        <button className="md:block hidden btn px-2 py-1 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:brightness-100">
+        <button onClick={logout} className="md:block hidden btn px-2 py-1 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:brightness-100">
           Logout
         </button>
       </div>
 
-      <button className="mt-4 w-full md:hidden block btn px-2 py-1 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:brightness-100">
+      <button onClick={logout} className="mt-4 w-full md:hidden block btn px-2 py-1 border-2 border-primary text-primary bg-transparent hover:bg-primary hover:text-white hover:brightness-100">
           Logout
         </button>
     </div>
