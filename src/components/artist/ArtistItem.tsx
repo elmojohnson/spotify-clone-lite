@@ -7,7 +7,7 @@ const ArtistItem: FC<Artist> = (artist) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex items-center bg-white"
+      className="flex items-center bg-base-100 text-white"
     >
       <div
         className="w-14 h-14 bg-center bg-no-repeat bg-cover bg-black"
