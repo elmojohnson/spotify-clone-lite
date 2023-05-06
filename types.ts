@@ -3,6 +3,14 @@ export interface Navbar {
   handleOpen: () => void;
 }
 
+export interface Search {
+  placeholder: string;
+  value: string;
+  onChange: (e: any) => void;
+  onSubmit: () => void;
+  isLoading: boolean;
+}
+
 export interface User {
   country: string;
   display_name: string;
