@@ -9,7 +9,7 @@ const TrackItem: FC<Track> = (track) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex items-center border hover:shadow"
+      className="flex items-center bg-white"
     >
       <img src={track.album.images[1].url} className="w-14" />
       <div className="flex items-center justify-between w-full">
