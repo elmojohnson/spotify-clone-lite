@@ -6,7 +6,11 @@ import { MdPlayCircle, MdMoreVert } from "react-icons/md";
 
 const TrackItem: FC<Track> = (track) => {
   return (
-    <div className="flex items-center border hover:shadow">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="flex items-center border hover:shadow"
+    >
       <img src={track.album.images[1].url} className="w-14" />
       <div className="flex items-center justify-between w-full">
         <div className="w-full leading-none px-2">
@@ -28,7 +32,7 @@ const TrackItem: FC<Track> = (track) => {
           </button>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
