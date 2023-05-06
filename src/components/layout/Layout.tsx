@@ -17,7 +17,7 @@ const Layout: FC<LayoutType> = ({ children }) => {
     <div>
       <Navbar />
       <AnimatePresence>{ctx?.isOpen && <Drawer />}</AnimatePresence>
-      <main className="wrapper">{children}</main>
+      <main className="wrapper py-4">{children}</main>
     </div>
   );
 };

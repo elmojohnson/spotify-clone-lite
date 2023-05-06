@@ -6,4 +6,12 @@
     .wrapper {
         @apply container mx-auto lg:px-16 px-4
     }
+
+    .btn {
+        @apply px-4 py-2 bg-slate-200 rounded hover:brightness-90 text-center font-semibold
+    }
+
+    .title {
+        @apply font-bold text-3xl mb-4
+    }
 }
