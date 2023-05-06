@@ -8,7 +8,7 @@ const Navbar = () => {
   const ctx = useContext(NavbarContext);
 
   return (
-    <div className="py-3 bg-primary text-white shadow">
+    <div className="py-3 bg-primary text-white shadow sticky top-0 z-50">
       <div className="flex items-center justify-between wrapper">
         <h1 className="font-bold text-2xl">Spotify</h1>
         <div className="md:block hidden">
