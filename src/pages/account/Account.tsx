@@ -1,10 +1,11 @@
+import LoadingState from "../../components/utils/LoadingState";
 import useUser from "../../hooks/useUser";
 
 const Account = () => {
   const { user, isLoading, logout } = useUser();
 
   if(isLoading) {
-    return <p>Loading...</p>
+    return <LoadingState />
   }
 
   return (
