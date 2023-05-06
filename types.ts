@@ -88,3 +88,16 @@ export interface Followers {
   href: string;
   total: number;
 }
+
+export interface Category {
+  href: string
+  icons: Icon[]
+  id: string
+  name: string
+}
+
+export interface Icon {
+  height: number
+  url: string
+  width: number
+}

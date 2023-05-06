@@ -1,9 +1,14 @@
 import { FC } from "react";
 import { Artist } from "../../../types";
+import { motion } from "framer-motion";
 
 const ArtistItem: FC<Artist> = (artist) => {
   return (
-    <div className="flex items-center border hover:shadow">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="flex items-center bg-white"
+    >
       <div
         className="w-14 h-14 bg-center bg-no-repeat bg-cover bg-black"
         style={{
@@ -13,7 +18,7 @@ const ArtistItem: FC<Artist> = (artist) => {
       <div className="px-4">
         <p className="font-semibold">{artist.name}</p>
       </div>
-    </div>
+    </motion.div>
   );
 };
 
