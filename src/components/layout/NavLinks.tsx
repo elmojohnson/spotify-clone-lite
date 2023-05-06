@@ -1,8 +1,9 @@
 import { useContext } from "react";
 import NavbarContext from "../../contexts/NavbarContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 const NavLinks = () => {
+  const location = useLocation();
   const ctx = useContext(NavbarContext);
   const links = [
     {
@@ -39,6 +40,7 @@ const NavLinks = () => {
             key={i}
             to={link.href}
             onClick={ctx?.isOpen ? ctx.handleOpen : () => {}}
+            className={location.pathname === link.href ? "text-white" : "text-slate-500"}
           >
             {link.label}
           </Link>
