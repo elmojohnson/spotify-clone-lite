@@ -9,13 +9,13 @@ const TrackItem: FC<Track> = (track) => {
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
-      className="flex items-center bg-white"
+      className="flex items-center bg-base-100 text-white"
     >
       <img src={track.album.images[1].url} className="w-14" />
       <div className="flex items-center justify-between w-full">
         <div className="w-full leading-none px-2">
           <p className="font-semibold">{track.name}</p>
-          <span className="text-sm">
+          <span className="text-xs brightness-50">
             {track.artists.map((artist) => artist.name).join(", ")}
           </span>
         </div>
