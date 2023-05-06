@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+    body {
+        @apply bg-base-200
+    }
+}
+
 @layer components {
     .wrapper {
         @apply container mx-auto lg:px-16 px-4
