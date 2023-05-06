@@ -14,7 +14,7 @@ const Drawer = () => {
       animate={{ x: 0 }}
       exit={{ x: 1000 }}
       transition={{ delay: 0.2, type: "keyframes" }}
-      className="bg-white shadow md:hidden block fixed top-0 right-0 h-screen w-screen"
+      className="bg-white shadow md:hidden block fixed top-0 right-0 h-screen w-screen z-50"
     >
       <div className="wrapper">
         <div className="flex items-center justify-between py-3">
