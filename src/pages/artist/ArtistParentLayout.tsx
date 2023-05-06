@@ -1,0 +1,11 @@
+import React from "react";
+import { Outlet } from "react-router-dom";
+
+const ArtistParentLayout = () => {
+  return <div>
+    <h1>Artists</h1>
+    <Outlet />
+  </div>;
+};
+
+export default ArtistParentLayout;
