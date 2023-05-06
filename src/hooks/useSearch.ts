@@ -1,30 +1,37 @@
-import { useState } from 'react'
-import spotify from '../lib/spotify';
+import { useState } from "react";
+import spotify from "../lib/spotify";
+import { Artist, Track } from "../../types";
 
 const useSearch = () => {
   const [value, setValue] = useState<string>("");
   const [isLoading, setLoading] = useState<boolean>(false);
 
-  const onChange = (e: any) => {
-    setValue(e.target.value);
-  }
+  // Search results
+  const [tracks, setTracks] = useState<Track[]>([]);
+  const [artists, setArtists] = useState<Artist[]>([]);
 
+  const onChange = (e: any) => setValue(e.target.value);
+
+  // Search
   const onSubmit = async () => {
-    if(value) {
+    if (value) {
       try {
         setLoading(true);
+        const result = await spotify.get(
+          `/search?q=${value}&type=album,track,playlist,artist`
+        );
 
-        const result = await spotify.get(`/search?q=${value}&type=album,track,playlist,artist`);
-        console.log(result.data)
+        setTracks(result.data.tracks.items);
+        setArtists(result.data.artists.items);
       } catch (error) {
         console.error(error);
       } finally {
         setLoading(false);
       }
     }
-  }
+  };
 
-  return {value, isLoading, onChange, onSubmit}
-}
+  return { value, isLoading, onChange, onSubmit, tracks, artists };
+};
 
-export default useSearch
+export default useSearch;
